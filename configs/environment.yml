@@ -1,0 +1,39 @@
+name: coursework_env
+
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.11
+
+  - pytorch>=2.2
+  - torchvision
+  - torchaudio
+  - pytorch-cuda=12.1
+
+  - numpy>=1.26
+  - tqdm>=4.66
+  - pyyaml>=6.0
+  - yaml
+
+  - faiss-gpu
+
+  - pip
+  - pip:
+      - transformers>=4.51
+      - accelerate>=1.0
+      - sentence-transformers>=3.0
+
+      - neo4j>=5.20
+
+      - langchain>=0.3
+      - langchain-core>=0.3
+      - langchain-community>=0.3
+
+      - pydantic>=2.8
+      - python-dotenv>=1.0
+
+      - orjson>=3.10

@@ -1,0 +1,49 @@
+dataset:
+  path: /scratch/ws/emdzyumenko-emdzyu_neo4j_space/dataset/full_dataset.jsonl
+
+chunking:
+  chunk_size: 1200
+  chunk_overlap: 150
+
+embedding:
+  model: Qwen/Qwen3-Embedding-0.6B
+  batch_size: 8
+  normalize: true
+  max_length: 2048
+
+llm:
+  model: Qwen/Qwen3.5-4B
+  max_new_tokens: 256
+  batch_size: 4
+  temperature: 0.0
+  max_input_tokens: 4096
+
+retrieval:
+  top_k_vector: 3
+  top_k_graph: 3
+  max_hops: 2
+
+neo4j:
+  uri: bolt://localhost:7687
+  username: neo4j
+  password: password
+  database: neo4j
+
+50_faiss:
+  index_path: /home/emdzyumenko/coursework/results/50_noise/index.faiss
+  metadata_path: /home/emdzyumenko/coursework/results/50_noise/metadata.json
+
+30_faiss:
+  index_path: /home/emdzyumenko/coursework/results/30_noise/index.faiss
+  metadata_path: /home/emdzyumenko/coursework/results/30_noise/metadata.json
+
+10_faiss:
+  index_path: /home/emdzyumenko/coursework/results/10_noise/index.faiss
+  metadata_path: /home/emdzyumenko/coursework/results/10_noise/metadata.json
+
+faiss:
+  index_path: /scratch/ws/emdzyumenko-emdzyu_neo4j_space/indices/faiss/index.faiss
+  metadata_path: /scratch/ws/emdzyumenko-emdzyu_neo4j_space/indices/faiss/metadata.json
+
+runtime:
+  seed: 42
